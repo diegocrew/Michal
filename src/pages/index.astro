@@ -1,0 +1,153 @@
+---
+import { Image } from 'astro:assets';
+import profileImage from '../assets/profile.png';
+import '../styles/global.css';
+
+const skills = [
+  {
+    name: 'Cloud architecture',
+    description: 'Designing scalable, resilient cloud platforms and leading architecture from strategy through delivery.',
+    technologies: ['Microsoft Azure', 'Google Cloud'],
+    color: 'blue',
+  },
+  {
+    name: 'Cybersecurity',
+    description: 'Building security into cloud and network architecture with zero trust and defense in depth.',
+    technologies: ['Cloud security', 'Zero trust', 'Security architecture'],
+    color: 'green',
+  },
+  {
+    name: 'DevOps & automation',
+    description: 'Improving delivery and consistency through infrastructure as code, CI/CD and platform automation.',
+    technologies: ['GitHub', 'Terraform', 'CI/CD'],
+    color: 'purple',
+  },
+  {
+    name: 'AI & emerging technology',
+    description: 'Exploring secure GenAI and ML architectures, agentic AI, and the risks around LLMs and code injection.',
+    technologies: ['Azure AI Foundry', 'GenAI', 'LLM security'],
+    color: 'orange',
+  },
+];
+
+const credentials = [
+  { title: 'Cloud Security Architecture and Design (GCAD)', issuer: 'GIAC Certifications', date: 'May 2025' },
+  { title: 'Microsoft Certified: Cybersecurity Architect Expert', issuer: 'Microsoft', date: 'Feb 2024' },
+  { title: 'Microsoft Certified: Azure Security Engineer Associate', issuer: 'Microsoft', date: 'Aug 2023' },
+  { title: 'CompTIA Security+', issuer: 'CompTIA', date: 'Jan 2025' },
+  { title: 'Lead Cloud Security Manager', issuer: 'PECB', date: 'Dec 2023' },
+  { title: 'Cloud and Network Defence: Cybersecurity & AI at Scale', issuer: 'National Security Agency', date: 'Oct 2025' },
+  { title: 'Google Cloud Certified Professional Developer', issuer: 'Google', date: 'Dec 2025' },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Michal is a cloud architect and technology leader focused on DevOps, cybersecurity, cloud and AI." />
+    <meta name="theme-color" content="#0d1117" />
+    <title>Michal · Cloud &amp; security</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="header-mark" href="#top" aria-label="Michal, home">M</a>
+        <div class="header-title"><strong>Michal</strong><span>/</span><span>Profile</span></div>
+        <a class="header-github" href="https://github.com/diegocrew">View GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+    </header>
+
+    <div id="top" class="layout">
+      <aside class="profile" aria-label="Profile">
+        <div class="profile-identity">
+          <Image class="avatar" src={profileImage} alt="Michal with a circuit-board illustration" width={520} height={520} fit="cover" />
+          <div class="profile-name">
+            <h1>Michal</h1>
+            <p>Cloud architect &amp; technology leader</p>
+          </div>
+        </div>
+        <p class="profile-bio">Building secure cloud platforms at the intersection of architecture, DevOps and AI.</p>
+        <a class="profile-button" href="https://www.linkedin.com/in/michalmikusik/">Connect on LinkedIn</a>
+        <ul class="profile-links">
+          <li><span aria-hidden="true">⌘</span> Cloud architecture &amp; security</li>
+          <li><span aria-hidden="true">↗</span> <a href="https://github.com/diegocrew">github.com/diegocrew</a></li>
+          <li><span aria-hidden="true">↗</span> <a href="https://www.linkedin.com/in/michalmikusik/">LinkedIn</a></li>
+        </ul>
+        <div class="profile-focus">
+          <h2>Focus</h2>
+          <div class="focus-tags"><span>DevOps</span><span>Cybersecurity</span><span>Cloud</span><span>AI</span></div>
+        </div>
+      </aside>
+
+      <main class="content">
+        <nav class="tabs" aria-label="Profile navigation">
+          <a class="active" href="#about"><span aria-hidden="true">▤</span> Overview</a>
+          <a href="#skills"><span aria-hidden="true">◇</span> Skills</a>
+          <a href="#connect"><span aria-hidden="true">↗</span> Connect</a>
+        </nav>
+
+        <section id="about" class="readme panel" aria-labelledby="about-title">
+          <div class="panel-header"><span><span class="file-icon" aria-hidden="true">▤</span> <strong>about-me</strong> / README.md</span></div>
+          <div class="readme-content">
+            <p class="readme-kicker"><span class="status-dot"></span> CLOUD · SECURITY · DEVOPS · AI</p>
+            <h2 id="about-title">Hi, I’m Michal</h2>
+            <p class="intro">Cloud architect and technology leader, focused on building secure, scalable platforms and making complex technology work for people.</p>
+            <h3>About me</h3>
+            <p>I’m a cloud-centric architect and manager with 18+ years of experience across infrastructure, networking, security and cloud. My work spans <strong>Azure and Google Cloud</strong>, from defining strategy and architecture to leading teams and end-to-end delivery.</p>
+            <p>With extensive experience in the EU banking sector, I’ve worked on secure and compliant solutions aligned with PCI-DSS, CIS, NIS2 and DORA. I bring a defense-in-depth mindset to architecture, with a focus on zero trust and resilience.</p>
+            <p>I’m also passionate about AI innovation: from enterprise-scale AI Foundry transformation and secure GenAI architectures to LLM vulnerabilities and code injection. I enjoy bringing people together to turn ambitious ideas into practical outcomes.</p>
+            <div class="readme-bottom">
+              <span><span class="status-dot"></span> Always learning, always building</span>
+              <a href="https://www.linkedin.com/in/michalmikusik/">More on LinkedIn ↗</a>
+            </div>
+          </div>
+        </section>
+
+        <section id="skills" class="skills-section" aria-labelledby="skills-title">
+          <div class="section-title"><h2 id="skills-title">Areas of expertise</h2><span>What I work with</span></div>
+          <div class="skills-grid">
+            {skills.map((skill) => (
+              <article class="skill-card panel">
+                <h3><span class="card-icon" aria-hidden="true">◇</span> {skill.name}</h3>
+                <p>{skill.description}</p>
+                <div class="skill-technologies">
+                  <span class={`skill-dot ${skill.color}`} aria-hidden="true"></span>
+                  {skill.technologies.map((technology, index) => (
+                    <span>{index > 0 && <span class="separator" aria-hidden="true"> · </span>}{technology}</span>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section class="credentials-section" aria-labelledby="credentials-title">
+          <div class="section-title"><h2 id="credentials-title">Selected credentials</h2><a href="https://www.linkedin.com/in/michalmikusik/details/certifications/">More on LinkedIn ↗</a></div>
+          <div class="credentials panel">
+            <p>My security background includes GIAC GCAD in cloud security architecture and design, Microsoft security architecture and engineering, and cloud and network defense. I’m also a Google Cloud Certified Professional Developer.</p>
+            <ul>
+              {credentials.map((credential) => (
+                <li>
+                  <span>{credential.title}</span>
+                  <span>{credential.issuer} · Issued {credential.date}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        <section id="connect" class="connect panel" aria-labelledby="connect-title">
+          <div>
+            <h2 id="connect-title">Let’s connect</h2>
+            <p>Interested in cloud, security, DevOps or AI? Let’s start a conversation.</p>
+          </div>
+          <a href="https://www.linkedin.com/in/michalmikusik/">Find me on LinkedIn <span aria-hidden="true">↗</span></a>
+        </section>
+      </main>
+    </div>
+
+    <footer><span>© {new Date().getFullYear()} Michal</span><span>Built with Astro &amp; Tailwind CSS</span><a href="#top">Back to top ↑</a></footer>
+  </body>
+</html>
