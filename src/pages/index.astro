@@ -30,14 +30,35 @@ const skills = [
   },
 ];
 
-const credentials = [
-  { title: 'Cloud Security Architecture and Design (GCAD)', issuer: 'GIAC Certifications', date: 'May 2025' },
-  { title: 'Microsoft Certified: Cybersecurity Architect Expert', issuer: 'Microsoft', date: 'Feb 2024' },
-  { title: 'Microsoft Certified: Azure Security Engineer Associate', issuer: 'Microsoft', date: 'Aug 2023' },
-  { title: 'CompTIA Security+', issuer: 'CompTIA', date: 'Jan 2025' },
-  { title: 'Lead Cloud Security Manager', issuer: 'PECB', date: 'Dec 2023' },
-  { title: 'Cloud and Network Defence: Cybersecurity & AI at Scale', issuer: 'National Security Agency', date: 'Oct 2025' },
-  { title: 'Google Cloud Certified Professional Developer', issuer: 'Google', date: 'Dec 2025' },
+const credentialGroups = [
+  {
+    name: 'Cloud architecture',
+    credentials: [
+      { title: 'Microsoft Certified: Azure Solutions Architect Expert', issuer: 'Microsoft' },
+      { title: 'Google Cloud Certified Professional Developer', issuer: 'Google' },
+    ],
+  },
+  {
+    name: 'Cybersecurity',
+    credentials: [
+      { title: 'Cloud Security Architecture and Design (GCAD)', issuer: 'GIAC Certifications' },
+      { title: 'Microsoft Certified: Cybersecurity Architect Expert', issuer: 'Microsoft' },
+    ],
+  },
+  {
+    name: 'DevOps & automation',
+    credentials: [
+      { title: 'GitHub administrator GH-100', issuer: 'GitHub' },
+      { title: 'HashiCorp Certified: Terraform Associate (003)', issuer: 'HashiCorp' },
+    ],
+  },
+  {
+    name: 'AI & emerging technology',
+    credentials: [
+      { title: 'Claude Certified Architect (Professional)', issuer: 'Anthropic' },
+      { title: 'NCP AAI - NVIDIA Certified Professional - Agentic AI', issuer: 'NVIDIA' },
+    ],
+  },
 ];
 ---
 
@@ -74,6 +95,7 @@ const credentials = [
           <li><span aria-hidden="true">⌘</span> Cloud architecture &amp; security</li>
           <li><span aria-hidden="true">↗</span> <a href="https://github.com/diegocrew">github.com/diegocrew</a></li>
           <li><span aria-hidden="true">↗</span> <a href="https://www.linkedin.com/in/michalmikusik/">LinkedIn</a></li>
+          <li><span aria-hidden="true">↗</span> <a href="https://open.spotify.com/show/52EEA7yUHf3aYatcFCTBhK">Human AInteligence podcast</a></li>
         </ul>
         <div class="profile-focus">
           <h2>Focus</h2>
@@ -126,16 +148,30 @@ const credentials = [
         <section class="credentials-section" aria-labelledby="credentials-title">
           <div class="section-title"><h2 id="credentials-title">Selected credentials</h2><a href="https://www.linkedin.com/in/michalmikusik/details/certifications/">More on LinkedIn ↗</a></div>
           <div class="credentials panel">
-            <p>My security background includes GIAC GCAD in cloud security architecture and design, Microsoft security architecture and engineering, and cloud and network defense. I’m also a Google Cloud Certified Professional Developer.</p>
-            <ul>
-              {credentials.map((credential) => (
-                <li>
-                  <span>{credential.title}</span>
-                  <span>{credential.issuer} · Issued {credential.date}</span>
-                </li>
-              ))}
-            </ul>
+            <p>Highlights across cloud, security, automation and AI. Find more credentials on my LinkedIn profile.</p>
+            {credentialGroups.map((group) => (
+              <div class="credential-group">
+                <h3>{group.name}</h3>
+                <ul>
+                  {group.credentials.map((credential) => (
+                    <li>
+                      <span>{credential.title}</span>
+                      <span>{credential.issuer}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
+        </section>
+
+        <section class="podcast panel" aria-labelledby="podcast-title">
+          <div>
+            <p class="podcast-label">PODCAST</p>
+            <h2 id="podcast-title">Human AInteligence</h2>
+            <p>Exploring AI news, emerging technology and their impact in plain English.</p>
+          </div>
+          <a href="https://open.spotify.com/show/52EEA7yUHf3aYatcFCTBhK">Listen on Spotify <span aria-hidden="true">↗</span></a>
         </section>
 
         <section id="connect" class="connect panel" aria-labelledby="connect-title">
@@ -148,6 +184,6 @@ const credentials = [
       </main>
     </div>
 
-    <footer><span>© {new Date().getFullYear()} Michal</span><span>Built with Astro &amp; Tailwind CSS</span><a href="#top">Back to top ↑</a></footer>
+    <footer><span>© Michal</span><span>Built with Astro &amp; Tailwind CSS</span><a href="#top">Back to top ↑</a></footer>
   </body>
 </html>

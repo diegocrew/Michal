@@ -80,9 +80,16 @@ h1, h2, h3, p { margin: 0; }
 .section-title > a { font-size: 12px; }
 .credentials { padding: 18px 20px; }
 .credentials > p { color: #c9d1d9; font-size: 13px; line-height: 1.7; }
-.credentials ul { margin: 15px 0 0; padding: 0; list-style: none; }
+.credential-group { margin-top: 20px; }
+.credential-group h3 { margin-bottom: 8px; color: #e6edf3; font-size: 13px; font-weight: 600; }
+.credentials ul { margin: 0; padding: 0; list-style: none; }
 .credentials li { display: flex; justify-content: space-between; gap: 12px 20px; padding: 10px 0; border-top: 1px solid #21262d; font-size: 13px; }
 .credentials li span:last-child { flex-shrink: 0; color: #8b949e; font-size: 12px; text-align: right; }
+.podcast { display: flex; justify-content: space-between; align-items: center; gap: 20px; margin-top: 28px; padding: 20px; }
+.podcast-label { color: #8b949e; font-size: 10px; font-weight: 600; letter-spacing: .08em; }
+.podcast h2 { margin-top: 6px; font-size: 16px; font-weight: 600; }
+.podcast h2 + p { margin-top: 5px; color: #8b949e; font-size: 13px; }
+.podcast > a { flex-shrink: 0; font-size: 13px; font-weight: 600; }
 .connect { display: flex; justify-content: space-between; align-items: center; gap: 20px; margin-top: 28px; padding: 20px; background: #161b22; scroll-margin-top: 20px; }
 .connect p { margin-top: 5px; color: #8b949e; font-size: 13px; }
 .connect > a { flex-shrink: 0; font-size: 13px; font-weight: 600; }
@@ -114,7 +121,7 @@ footer a { margin-left: auto; }
   .skill-card { min-height: 140px; }
   .credentials li { flex-direction: column; gap: 3px; }
   .credentials li span:last-child { text-align: left; }
-  .connect { align-items: flex-start; flex-direction: column; }
+  .connect, .podcast { align-items: flex-start; flex-direction: column; }
   footer { margin-inline: 20px; }
 }
 
